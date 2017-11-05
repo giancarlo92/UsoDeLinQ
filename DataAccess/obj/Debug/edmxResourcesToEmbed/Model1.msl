@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CMV_LOCAL3ModelStoreContainer" CdmEntityContainer="CMV_LOCAL3Entities">
+    <EntitySetMapping Name="C__MigrationHistory">
+      <EntityTypeMapping TypeName="CMV_LOCAL3Model.C__MigrationHistory">
+        <MappingFragment StoreEntitySet="__MigrationHistory">
+          <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+          <ScalarProperty Name="ContextKey" ColumnName="ContextKey" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cliente_">
+      <EntityTypeMapping TypeName="CMV_LOCAL3Model.Cliente_">
+        <MappingFragment StoreEntitySet="Cliente_">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ruc" ColumnName="ruc" />
+          <ScalarProperty Name="razonSocial" ColumnName="razonSocial" />
+          <ScalarProperty Name="maxCredit" ColumnName="maxCredit" />
+          <ScalarProperty Name="cantidadDeDias" ColumnName="cantidadDeDias" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Conductor_">
+      <EntityTypeMapping TypeName="CMV_LOCAL3Model.Conductor_">
+        <MappingFragment StoreEntitySet="Conductor_">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ruc" ColumnName="ruc" />
+          <ScalarProperty Name="placaAuto" ColumnName="placaAuto" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="cuentaBancaria" ColumnName="cuentaBancaria" />
+          <ScalarProperty Name="celular" ColumnName="celular" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="activo" ColumnName="activo" />
+          <ScalarProperty Name="idAuto" ColumnName="idAuto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetalleVenta_">
+      <EntityTypeMapping TypeName="CMV_LOCAL3Model.DetalleVenta_">
+        <MappingFragment StoreEntitySet="DetalleVenta_">
+          <ScalarProperty Name="idCaja" ColumnName="idCaja" />
+          <ScalarProperty Name="idDoc" ColumnName="idDoc" />
+          <ScalarProperty Name="idCorrelativo" ColumnName="idCorrelativo" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idTarifa" ColumnName="idTarifa" />
+          <ScalarProperty Name="esParticular" ColumnName="esParticular" />
+          <ScalarProperty Name="detalle" ColumnName="detalle" />
+          <ScalarProperty Name="montoAsignado" ColumnName="montoAsignado" />
+          <ScalarProperty Name="IGV" ColumnName="IGV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Distrito_">
+      <EntityTypeMapping TypeName="CMV_LOCAL3Model.Distrito_">
+        <MappingFragment StoreEntitySet="Distrito_">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Documento_">
+      <EntityTypeMapping TypeName="CMV_LOCAL3Model.Documento_">
+        <MappingFragment StoreEntitySet="Documento_">
+          <ScalarProperty Name="idOrdenador" ColumnName="idOrdenador" />
+          <ScalarProperty Name="tipoDocumento" ColumnName="tipoDocumento" />
+          <ScalarProperty Name="correlativo" ColumnName="correlativo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Moneda_">
+      <EntityTypeMapping TypeName="CMV_LOCAL3Model.Moneda_">
+        <MappingFragment StoreEntitySet="Moneda_">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="tipoCambio" ColumnName="tipoCambio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ordenador_">
+      <EntityTypeMapping TypeName="CMV_LOCAL3Model.Ordenador_">
+        <MappingFragment StoreEntitySet="Ordenador_">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idCaja" ColumnName="idCaja" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="EstaActivo" ColumnName="EstaActivo" />
+          <ScalarProperty Name="tipoTerminalVenta" ColumnName="tipoTerminalVenta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Retiro_">
+      <EntityTypeMapping TypeName="CMV_LOCAL3Model.Retiro_">
+        <MappingFragment StoreEntitySet="Retiro_">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="montoRetiro" ColumnName="montoRetiro" />
+          <ScalarProperty Name="HoraRetiro" ColumnName="HoraRetiro" />
+          <ScalarProperty Name="idMoneda" ColumnName="idMoneda" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="idTurno" ColumnName="idTurno" />
+          <ScalarProperty Name="idOrdenador" ColumnName="idOrdenador" />
+          <ScalarProperty Name="TIME_STAMP" ColumnName="TIME_STAMP" />
+          <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SaldosIniciales_">
+      <EntityTypeMapping TypeName="CMV_LOCAL3Model.SaldosIniciales_">
+        <MappingFragment StoreEntitySet="SaldosIniciales_">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="saldoInicial" ColumnName="saldoInicial" />
+          <ScalarProperty Name="saldoFinal" ColumnName="saldoFinal" />
+          <ScalarProperty Name="idMoneda" ColumnName="idMoneda" />
+          <ScalarProperty Name="idTurno" ColumnName="idTurno" />
+          <ScalarProperty Name="TIME_STAMP" ColumnName="TIME_STAMP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sincronizacion_">
+      <EntityTypeMapping TypeName="CMV_LOCAL3Model.Sincronizacion_">
+        <MappingFragment StoreEntitySet="Sincronizacion_">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ULTIMO_TIME_STAMP" ColumnName="ULTIMO_TIME_STAMP" />
+          <ScalarProperty Name="ULTIMO_ID" ColumnName="ULTIMO_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tarifa_local">
+      <EntityTypeMapping TypeName="CMV_LOCAL3Model.Tarifa_local">
+        <MappingFragment StoreEntitySet="Tarifa_local">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tipoServicio" ColumnName="tipoServicio" />
+          <ScalarProperty Name="idDistritoFin" ColumnName="idDistritoFin" />
+          <ScalarProperty Name="idZonaFin" ColumnName="idZonaFin" />
+          <ScalarProperty Name="idDistritoInicio" ColumnName="idDistritoInicio" />
+          <ScalarProperty Name="idZonaInicio" ColumnName="idZonaInicio" />
+          <ScalarProperty Name="idTipoAuto" ColumnName="idTipoAuto" />
+          <ScalarProperty Name="tarifa" ColumnName="tarifa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoAuto_">
+      <EntityTypeMapping TypeName="CMV_LOCAL3Model.TipoAuto_">
+        <MappingFragment StoreEntitySet="TipoAuto_">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Turno_">
+      <EntityTypeMapping TypeName="CMV_LOCAL3Model.Turno_">
+        <MappingFragment StoreEntitySet="Turno_">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="inicio" ColumnName="inicio" />
+          <ScalarProperty Name="fin" ColumnName="fin" />
+          <ScalarProperty Name="estaAbierto" ColumnName="estaAbierto" />
+          <ScalarProperty Name="actualizarCierre" ColumnName="actualizarCierre" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="idOrdenador" ColumnName="idOrdenador" />
+          <ScalarProperty Name="TIME_STAMP" ColumnName="TIME_STAMP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario_">
+      <EntityTypeMapping TypeName="CMV_LOCAL3Model.Usuario_">
+        <MappingFragment StoreEntitySet="Usuario_">
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="perfil" ColumnName="perfil" />
+          <ScalarProperty Name="estaActivo" ColumnName="estaActivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Venta_">
+      <EntityTypeMapping TypeName="CMV_LOCAL3Model.Venta_">
+        <MappingFragment StoreEntitySet="Venta_">
+          <ScalarProperty Name="idCaja" ColumnName="idCaja" />
+          <ScalarProperty Name="idDoc" ColumnName="idDoc" />
+          <ScalarProperty Name="idCorrelativo" ColumnName="idCorrelativo" />
+          <ScalarProperty Name="tipoDeVenta" ColumnName="tipoDeVenta" />
+          <ScalarProperty Name="documento" ColumnName="documento" />
+          <ScalarProperty Name="RazonSocial" ColumnName="RazonSocial" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="EsBoleta" ColumnName="EsBoleta" />
+          <ScalarProperty Name="facturado" ColumnName="facturado" />
+          <ScalarProperty Name="anulado" ColumnName="anulado" />
+          <ScalarProperty Name="numPasajeros" ColumnName="numPasajeros" />
+          <ScalarProperty Name="pagadoAlConductor" ColumnName="pagadoAlConductor" />
+          <ScalarProperty Name="clientePago" ColumnName="clientePago" />
+          <ScalarProperty Name="fechaFacturacion" ColumnName="fechaFacturacion" />
+          <ScalarProperty Name="totalAPagar" ColumnName="totalAPagar" />
+          <ScalarProperty Name="montoDePagoEnSoles" ColumnName="montoDePagoEnSoles" />
+          <ScalarProperty Name="igvTotal" ColumnName="igvTotal" />
+          <ScalarProperty Name="montoDePagoEnMoneda" ColumnName="montoDePagoEnMoneda" />
+          <ScalarProperty Name="montoDelVueltoEnSoles" ColumnName="montoDelVueltoEnSoles" />
+          <ScalarProperty Name="idMoneda" ColumnName="idMoneda" />
+          <ScalarProperty Name="CotizacionMoneda" ColumnName="CotizacionMoneda" />
+          <ScalarProperty Name="mesVencimientoTargeta" ColumnName="mesVencimientoTargeta" />
+          <ScalarProperty Name="anioVencimientoTargeta" ColumnName="anioVencimientoTargeta" />
+          <ScalarProperty Name="UltimosDigitosTargeta" ColumnName="UltimosDigitosTargeta" />
+          <ScalarProperty Name="idTurno" ColumnName="idTurno" />
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="idConductor" ColumnName="idConductor" />
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="idOrdenador" ColumnName="idOrdenador" />
+          <ScalarProperty Name="nuevoInsert" ColumnName="nuevoInsert" />
+          <ScalarProperty Name="necesitoUpdateEnCloud" ColumnName="necesitoUpdateEnCloud" />
+          <ScalarProperty Name="TipoDeTargeta" ColumnName="TipoDeTargeta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zona_">
+      <EntityTypeMapping TypeName="CMV_LOCAL3Model.Zona_">
+        <MappingFragment StoreEntitySet="Zona_">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="idDistrito" ColumnName="idDistrito" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

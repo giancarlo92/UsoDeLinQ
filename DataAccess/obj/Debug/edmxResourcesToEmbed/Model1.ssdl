@@ -1,0 +1,570 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CMV_LOCAL3Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cliente_">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="ruc" Type="nvarchar(max)" />
+    <Property Name="razonSocial" Type="nvarchar(max)" />
+    <Property Name="maxCredit" Type="float" Nullable="false" />
+    <Property Name="cantidadDeDias" Type="int" Nullable="false" />
+    <Property Name="telefono" Type="nvarchar(max)" />
+    <Property Name="correo" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Conductor_">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="ruc" Type="nvarchar(max)" />
+    <Property Name="placaAuto" Type="nvarchar(max)" />
+    <Property Name="nombre" Type="nvarchar(max)" />
+    <Property Name="Direccion" Type="nvarchar(max)" />
+    <Property Name="cuentaBancaria" Type="nvarchar(max)" />
+    <Property Name="celular" Type="nvarchar(max)" />
+    <Property Name="correo" Type="nvarchar(max)" />
+    <Property Name="activo" Type="bit" Nullable="false" />
+    <Property Name="idAuto" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DetalleVenta_">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="idCaja" Type="nvarchar" MaxLength="128" />
+    <Property Name="idDoc" Type="int" Nullable="false" />
+    <Property Name="idCorrelativo" Type="int" Nullable="false" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idTarifa" Type="int" />
+    <Property Name="esParticular" Type="bit" Nullable="false" />
+    <Property Name="detalle" Type="nvarchar(max)" />
+    <Property Name="montoAsignado" Type="float" Nullable="false" />
+    <Property Name="IGV" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Distrito_">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Documento_">
+    <Key>
+      <PropertyRef Name="idOrdenador" />
+      <PropertyRef Name="tipoDocumento" />
+    </Key>
+    <Property Name="idOrdenador" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="tipoDocumento" Type="int" Nullable="false" />
+    <Property Name="correlativo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Moneda_">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar(max)" />
+    <Property Name="tipoCambio" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ordenador_">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="idCaja" Type="nvarchar(max)" />
+    <Property Name="nombre" Type="nvarchar(max)" />
+    <Property Name="descripcion" Type="nvarchar(max)" />
+    <Property Name="EstaActivo" Type="bit" Nullable="false" />
+    <Property Name="tipoTerminalVenta" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Retiro_">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="montoRetiro" Type="float" Nullable="false" />
+    <Property Name="HoraRetiro" Type="datetime" Nullable="false" />
+    <Property Name="idMoneda" Type="int" Nullable="false" />
+    <Property Name="idUsuario" Type="nvarchar" MaxLength="128" />
+    <Property Name="idTurno" Type="int" Nullable="false" />
+    <Property Name="idOrdenador" Type="nvarchar" MaxLength="128" />
+    <Property Name="TIME_STAMP" Type="datetime" Nullable="false" />
+    <Property Name="Motivo" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="SaldosIniciales_">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="saldoInicial" Type="float" Nullable="false" />
+    <Property Name="saldoFinal" Type="float" Nullable="false" />
+    <Property Name="idMoneda" Type="int" Nullable="false" />
+    <Property Name="idTurno" Type="int" Nullable="false" />
+    <Property Name="TIME_STAMP" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sincronizacion_">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ULTIMO_TIME_STAMP" Type="datetime" Nullable="false" />
+    <Property Name="ULTIMO_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tarifa_local">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="tipoServicio" Type="int" Nullable="false" />
+    <Property Name="idDistritoFin" Type="nvarchar" MaxLength="128" />
+    <Property Name="idZonaFin" Type="int" />
+    <Property Name="idDistritoInicio" Type="nvarchar" MaxLength="128" />
+    <Property Name="idZonaInicio" Type="int" />
+    <Property Name="idTipoAuto" Type="int" Nullable="false" />
+    <Property Name="tarifa" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoAuto_">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Turno_">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="inicio" Type="datetime" Nullable="false" />
+    <Property Name="fin" Type="datetime" Nullable="false" />
+    <Property Name="estaAbierto" Type="bit" Nullable="false" />
+    <Property Name="actualizarCierre" Type="bit" />
+    <Property Name="idUsuario" Type="nvarchar" MaxLength="128" />
+    <Property Name="idOrdenador" Type="nvarchar" MaxLength="128" />
+    <Property Name="TIME_STAMP" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuario_">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="username" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="password" Type="nvarchar(max)" />
+    <Property Name="nombre" Type="nvarchar(max)" />
+    <Property Name="apellidos" Type="nvarchar(max)" />
+    <Property Name="correo" Type="nvarchar(max)" />
+    <Property Name="perfil" Type="int" Nullable="false" />
+    <Property Name="estaActivo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Venta_">
+    <Key>
+      <PropertyRef Name="idCaja" />
+      <PropertyRef Name="idDoc" />
+      <PropertyRef Name="idCorrelativo" />
+    </Key>
+    <Property Name="idCaja" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="idDoc" Type="int" Nullable="false" />
+    <Property Name="idCorrelativo" Type="int" Nullable="false" />
+    <Property Name="tipoDeVenta" Type="int" Nullable="false" />
+    <Property Name="documento" Type="nvarchar(max)" />
+    <Property Name="RazonSocial" Type="nvarchar(max)" />
+    <Property Name="Direccion" Type="nvarchar(max)" />
+    <Property Name="EsBoleta" Type="bit" Nullable="false" />
+    <Property Name="facturado" Type="bit" Nullable="false" />
+    <Property Name="anulado" Type="bit" Nullable="false" />
+    <Property Name="numPasajeros" Type="int" Nullable="false" />
+    <Property Name="pagadoAlConductor" Type="bit" Nullable="false" />
+    <Property Name="clientePago" Type="bit" Nullable="false" />
+    <Property Name="fechaFacturacion" Type="datetime" Nullable="false" />
+    <Property Name="totalAPagar" Type="float" Nullable="false" />
+    <Property Name="montoDePagoEnSoles" Type="float" Nullable="false" />
+    <Property Name="igvTotal" Type="float" Nullable="false" />
+    <Property Name="montoDePagoEnMoneda" Type="float" Nullable="false" />
+    <Property Name="montoDelVueltoEnSoles" Type="float" Nullable="false" />
+    <Property Name="idMoneda" Type="int" />
+    <Property Name="CotizacionMoneda" Type="float" Nullable="false" />
+    <Property Name="mesVencimientoTargeta" Type="int" Nullable="false" />
+    <Property Name="anioVencimientoTargeta" Type="int" Nullable="false" />
+    <Property Name="UltimosDigitosTargeta" Type="nvarchar(max)" />
+    <Property Name="idTurno" Type="int" />
+    <Property Name="idUsuario" Type="nvarchar" MaxLength="128" />
+    <Property Name="idConductor" Type="int" />
+    <Property Name="idCliente" Type="int" />
+    <Property Name="idOrdenador" Type="nvarchar" MaxLength="128" />
+    <Property Name="nuevoInsert" Type="bit" Nullable="false" />
+    <Property Name="necesitoUpdateEnCloud" Type="bit" Nullable="false" />
+    <Property Name="TipoDeTargeta" Type="int" />
+  </EntityType>
+  <EntityType Name="Zona_">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar(max)" />
+    <Property Name="descripcion" Type="nvarchar(max)" />
+    <Property Name="idDistrito" Type="nvarchar" MaxLength="128" />
+  </EntityType>
+  <Association Name="FK_dbo_Conductor__dbo_TipoAuto__idAuto">
+    <End Role="TipoAuto_" Type="Self.TipoAuto_" Multiplicity="1" />
+    <End Role="Conductor_" Type="Self.Conductor_" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoAuto_">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Conductor_">
+        <PropertyRef Name="idAuto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_DetalleVenta__dbo_Tarifa_local_idTarifa">
+    <End Role="Tarifa_local" Type="Self.Tarifa_local" Multiplicity="0..1" />
+    <End Role="DetalleVenta_" Type="Self.DetalleVenta_" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tarifa_local">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="DetalleVenta_">
+        <PropertyRef Name="idTarifa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Documento__dbo_Ordenador__idOrdenador">
+    <End Role="Ordenador_" Type="Self.Ordenador_" Multiplicity="1" />
+    <End Role="Documento_" Type="Self.Documento_" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ordenador_">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Documento_">
+        <PropertyRef Name="idOrdenador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Retiro__dbo_Moneda__idMoneda">
+    <End Role="Moneda_" Type="Self.Moneda_" Multiplicity="1" />
+    <End Role="Retiro_" Type="Self.Retiro_" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Moneda_">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Retiro_">
+        <PropertyRef Name="idMoneda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Retiro__dbo_Ordenador__idOrdenador">
+    <End Role="Ordenador_" Type="Self.Ordenador_" Multiplicity="0..1" />
+    <End Role="Retiro_" Type="Self.Retiro_" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ordenador_">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Retiro_">
+        <PropertyRef Name="idOrdenador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Retiro__dbo_Turno__idTurno">
+    <End Role="Turno_" Type="Self.Turno_" Multiplicity="1" />
+    <End Role="Retiro_" Type="Self.Retiro_" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Turno_">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Retiro_">
+        <PropertyRef Name="idTurno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Retiro__dbo_Usuario__idUsuario">
+    <End Role="Usuario_" Type="Self.Usuario_" Multiplicity="0..1" />
+    <End Role="Retiro_" Type="Self.Retiro_" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario_">
+        <PropertyRef Name="username" />
+      </Principal>
+      <Dependent Role="Retiro_">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_SaldosIniciales__dbo_Moneda__idMoneda">
+    <End Role="Moneda_" Type="Self.Moneda_" Multiplicity="1" />
+    <End Role="SaldosIniciales_" Type="Self.SaldosIniciales_" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Moneda_">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="SaldosIniciales_">
+        <PropertyRef Name="idMoneda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Tarifa_local_dbo_Distrito__idDistritoFin">
+    <End Role="Distrito_" Type="Self.Distrito_" Multiplicity="0..1" />
+    <End Role="Tarifa_local" Type="Self.Tarifa_local" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Distrito_">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Tarifa_local">
+        <PropertyRef Name="idDistritoFin" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Tarifa_local_dbo_Distrito__idDistritoInicio">
+    <End Role="Distrito_" Type="Self.Distrito_" Multiplicity="0..1" />
+    <End Role="Tarifa_local" Type="Self.Tarifa_local" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Distrito_">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Tarifa_local">
+        <PropertyRef Name="idDistritoInicio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Tarifa_local_dbo_TipoAuto__idTipoAuto">
+    <End Role="TipoAuto_" Type="Self.TipoAuto_" Multiplicity="1" />
+    <End Role="Tarifa_local" Type="Self.Tarifa_local" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoAuto_">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Tarifa_local">
+        <PropertyRef Name="idTipoAuto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Tarifa_local_dbo_Zona__idZonaFin">
+    <End Role="Zona_" Type="Self.Zona_" Multiplicity="0..1" />
+    <End Role="Tarifa_local" Type="Self.Tarifa_local" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zona_">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Tarifa_local">
+        <PropertyRef Name="idZonaFin" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Tarifa_local_dbo_Zona__idZonaInicio">
+    <End Role="Zona_" Type="Self.Zona_" Multiplicity="0..1" />
+    <End Role="Tarifa_local" Type="Self.Tarifa_local" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Zona_">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Tarifa_local">
+        <PropertyRef Name="idZonaInicio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Turno__dbo_Ordenador__idOrdenador">
+    <End Role="Ordenador_" Type="Self.Ordenador_" Multiplicity="0..1" />
+    <End Role="Turno_" Type="Self.Turno_" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ordenador_">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Turno_">
+        <PropertyRef Name="idOrdenador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Turno__dbo_Usuario__idUsuario">
+    <End Role="Usuario_" Type="Self.Usuario_" Multiplicity="0..1" />
+    <End Role="Turno_" Type="Self.Turno_" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario_">
+        <PropertyRef Name="username" />
+      </Principal>
+      <Dependent Role="Turno_">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Venta__dbo_Cliente__idCliente">
+    <End Role="Cliente_" Type="Self.Cliente_" Multiplicity="0..1" />
+    <End Role="Venta_" Type="Self.Venta_" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente_">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Venta_">
+        <PropertyRef Name="idCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Venta__dbo_Conductor__idConductor">
+    <End Role="Conductor_" Type="Self.Conductor_" Multiplicity="0..1" />
+    <End Role="Venta_" Type="Self.Venta_" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Conductor_">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Venta_">
+        <PropertyRef Name="idConductor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Venta__dbo_Moneda__idMoneda">
+    <End Role="Moneda_" Type="Self.Moneda_" Multiplicity="0..1" />
+    <End Role="Venta_" Type="Self.Venta_" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Moneda_">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Venta_">
+        <PropertyRef Name="idMoneda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Venta__dbo_Ordenador__idOrdenador">
+    <End Role="Ordenador_" Type="Self.Ordenador_" Multiplicity="0..1" />
+    <End Role="Venta_" Type="Self.Venta_" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ordenador_">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Venta_">
+        <PropertyRef Name="idOrdenador" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Venta__dbo_Usuario__idUsuario">
+    <End Role="Usuario_" Type="Self.Usuario_" Multiplicity="0..1" />
+    <End Role="Venta_" Type="Self.Venta_" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario_">
+        <PropertyRef Name="username" />
+      </Principal>
+      <Dependent Role="Venta_">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Zona__dbo_Distrito__idDistrito">
+    <End Role="Distrito_" Type="Self.Distrito_" Multiplicity="0..1" />
+    <End Role="Zona_" Type="Self.Zona_" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Distrito_">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Zona_">
+        <PropertyRef Name="idDistrito" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CMV_LOCAL3ModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cliente_" EntityType="Self.Cliente_" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Conductor_" EntityType="Self.Conductor_" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DetalleVenta_" EntityType="Self.DetalleVenta_" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Distrito_" EntityType="Self.Distrito_" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Documento_" EntityType="Self.Documento_" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Moneda_" EntityType="Self.Moneda_" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ordenador_" EntityType="Self.Ordenador_" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Retiro_" EntityType="Self.Retiro_" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SaldosIniciales_" EntityType="Self.SaldosIniciales_" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sincronizacion_" EntityType="Self.Sincronizacion_" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tarifa_local" EntityType="Self.Tarifa_local" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoAuto_" EntityType="Self.TipoAuto_" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Turno_" EntityType="Self.Turno_" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario_" EntityType="Self.Usuario_" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Venta_" EntityType="Self.Venta_" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Zona_" EntityType="Self.Zona_" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_dbo_Conductor__dbo_TipoAuto__idAuto" Association="Self.FK_dbo_Conductor__dbo_TipoAuto__idAuto">
+      <End Role="TipoAuto_" EntitySet="TipoAuto_" />
+      <End Role="Conductor_" EntitySet="Conductor_" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_DetalleVenta__dbo_Tarifa_local_idTarifa" Association="Self.FK_dbo_DetalleVenta__dbo_Tarifa_local_idTarifa">
+      <End Role="Tarifa_local" EntitySet="Tarifa_local" />
+      <End Role="DetalleVenta_" EntitySet="DetalleVenta_" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Documento__dbo_Ordenador__idOrdenador" Association="Self.FK_dbo_Documento__dbo_Ordenador__idOrdenador">
+      <End Role="Ordenador_" EntitySet="Ordenador_" />
+      <End Role="Documento_" EntitySet="Documento_" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Retiro__dbo_Moneda__idMoneda" Association="Self.FK_dbo_Retiro__dbo_Moneda__idMoneda">
+      <End Role="Moneda_" EntitySet="Moneda_" />
+      <End Role="Retiro_" EntitySet="Retiro_" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Retiro__dbo_Ordenador__idOrdenador" Association="Self.FK_dbo_Retiro__dbo_Ordenador__idOrdenador">
+      <End Role="Ordenador_" EntitySet="Ordenador_" />
+      <End Role="Retiro_" EntitySet="Retiro_" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Retiro__dbo_Turno__idTurno" Association="Self.FK_dbo_Retiro__dbo_Turno__idTurno">
+      <End Role="Turno_" EntitySet="Turno_" />
+      <End Role="Retiro_" EntitySet="Retiro_" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Retiro__dbo_Usuario__idUsuario" Association="Self.FK_dbo_Retiro__dbo_Usuario__idUsuario">
+      <End Role="Usuario_" EntitySet="Usuario_" />
+      <End Role="Retiro_" EntitySet="Retiro_" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_SaldosIniciales__dbo_Moneda__idMoneda" Association="Self.FK_dbo_SaldosIniciales__dbo_Moneda__idMoneda">
+      <End Role="Moneda_" EntitySet="Moneda_" />
+      <End Role="SaldosIniciales_" EntitySet="SaldosIniciales_" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Tarifa_local_dbo_Distrito__idDistritoFin" Association="Self.FK_dbo_Tarifa_local_dbo_Distrito__idDistritoFin">
+      <End Role="Distrito_" EntitySet="Distrito_" />
+      <End Role="Tarifa_local" EntitySet="Tarifa_local" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Tarifa_local_dbo_Distrito__idDistritoInicio" Association="Self.FK_dbo_Tarifa_local_dbo_Distrito__idDistritoInicio">
+      <End Role="Distrito_" EntitySet="Distrito_" />
+      <End Role="Tarifa_local" EntitySet="Tarifa_local" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Tarifa_local_dbo_TipoAuto__idTipoAuto" Association="Self.FK_dbo_Tarifa_local_dbo_TipoAuto__idTipoAuto">
+      <End Role="TipoAuto_" EntitySet="TipoAuto_" />
+      <End Role="Tarifa_local" EntitySet="Tarifa_local" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Tarifa_local_dbo_Zona__idZonaFin" Association="Self.FK_dbo_Tarifa_local_dbo_Zona__idZonaFin">
+      <End Role="Zona_" EntitySet="Zona_" />
+      <End Role="Tarifa_local" EntitySet="Tarifa_local" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Tarifa_local_dbo_Zona__idZonaInicio" Association="Self.FK_dbo_Tarifa_local_dbo_Zona__idZonaInicio">
+      <End Role="Zona_" EntitySet="Zona_" />
+      <End Role="Tarifa_local" EntitySet="Tarifa_local" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Turno__dbo_Ordenador__idOrdenador" Association="Self.FK_dbo_Turno__dbo_Ordenador__idOrdenador">
+      <End Role="Ordenador_" EntitySet="Ordenador_" />
+      <End Role="Turno_" EntitySet="Turno_" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Turno__dbo_Usuario__idUsuario" Association="Self.FK_dbo_Turno__dbo_Usuario__idUsuario">
+      <End Role="Usuario_" EntitySet="Usuario_" />
+      <End Role="Turno_" EntitySet="Turno_" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Venta__dbo_Cliente__idCliente" Association="Self.FK_dbo_Venta__dbo_Cliente__idCliente">
+      <End Role="Cliente_" EntitySet="Cliente_" />
+      <End Role="Venta_" EntitySet="Venta_" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Venta__dbo_Conductor__idConductor" Association="Self.FK_dbo_Venta__dbo_Conductor__idConductor">
+      <End Role="Conductor_" EntitySet="Conductor_" />
+      <End Role="Venta_" EntitySet="Venta_" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Venta__dbo_Moneda__idMoneda" Association="Self.FK_dbo_Venta__dbo_Moneda__idMoneda">
+      <End Role="Moneda_" EntitySet="Moneda_" />
+      <End Role="Venta_" EntitySet="Venta_" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Venta__dbo_Ordenador__idOrdenador" Association="Self.FK_dbo_Venta__dbo_Ordenador__idOrdenador">
+      <End Role="Ordenador_" EntitySet="Ordenador_" />
+      <End Role="Venta_" EntitySet="Venta_" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Venta__dbo_Usuario__idUsuario" Association="Self.FK_dbo_Venta__dbo_Usuario__idUsuario">
+      <End Role="Usuario_" EntitySet="Usuario_" />
+      <End Role="Venta_" EntitySet="Venta_" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Zona__dbo_Distrito__idDistrito" Association="Self.FK_dbo_Zona__dbo_Distrito__idDistrito">
+      <End Role="Distrito_" EntitySet="Distrito_" />
+      <End Role="Zona_" EntitySet="Zona_" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

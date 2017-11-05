@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesdeBaseDeDatos", "UsoDeLinQ\DesdeBaseDeDatos.csproj", "{4BA50713-3682-4592-89BC-826D9CA89971}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{B6E8DC5A-09C3-470A-871E-DDF725662631}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesdeXml", "DesdeXml\DesdeXml.csproj", "{3F573DAB-AC3E-44D9-AB76-90CB928887AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4BA50713-3682-4592-89BC-826D9CA89971}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BA50713-3682-4592-89BC-826D9CA89971}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BA50713-3682-4592-89BC-826D9CA89971}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BA50713-3682-4592-89BC-826D9CA89971}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6E8DC5A-09C3-470A-871E-DDF725662631}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6E8DC5A-09C3-470A-871E-DDF725662631}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6E8DC5A-09C3-470A-871E-DDF725662631}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6E8DC5A-09C3-470A-871E-DDF725662631}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F573DAB-AC3E-44D9-AB76-90CB928887AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F573DAB-AC3E-44D9-AB76-90CB928887AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F573DAB-AC3E-44D9-AB76-90CB928887AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F573DAB-AC3E-44D9-AB76-90CB928887AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

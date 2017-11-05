@@ -1,0 +1,5 @@
+c:\users\visual_dom\documents\visual studio 2015\Projects\UsoDeLinQ\DesdeXml\bin\Debug\DesdeXml.exe.config
+c:\users\visual_dom\documents\visual studio 2015\Projects\UsoDeLinQ\DesdeXml\bin\Debug\DesdeXml.exe
+c:\users\visual_dom\documents\visual studio 2015\Projects\UsoDeLinQ\DesdeXml\bin\Debug\DesdeXml.pdb
+c:\users\visual_dom\documents\visual studio 2015\Projects\UsoDeLinQ\DesdeXml\obj\Debug\DesdeXml.exe
+c:\users\visual_dom\documents\visual studio 2015\Projects\UsoDeLinQ\DesdeXml\obj\Debug\DesdeXml.pdb
